@@ -2,11 +2,14 @@
   "name": "react-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
+  "homepage":".",
+  "DEV":true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build":"webpack --config build/webpack.base.conf.js ",
+    "electron":"electron .",
+    "build": "webpack --config build/webpack.base.conf.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,6 +28,7 @@
   "dependencies": {
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
+    "electron": "^1.7.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
