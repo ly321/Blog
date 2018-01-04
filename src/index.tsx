@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import Home from "./components/Home/Home";
 
-import Hello from "./components/Hello/Hello";
+import "./assets/scss/reset.scss"
+import "./assets/scss/util.scss"
 
 ReactDOM.render(
-  <Hello name="TypeScript" enthusiasmLevel={10} />,
+  <Home/>,
   document.getElementById('root') as HTMLElement
 );

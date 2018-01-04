@@ -4,8 +4,8 @@ export default class Login extends React.Component{
     render(){
         return(
             <div className="login">
-                1111
+                <p></p>
             </div>
         )
-    } 
+    }  
 }
