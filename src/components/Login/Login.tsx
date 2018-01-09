@@ -16,7 +16,7 @@ export default class Login extends React.Component{
                     </p>
                     <input type="text" placeholder="Username or email"/>
                     <input type="text" placeholder="Password"/>
-                    <p>The best way to build and ship software.<a href="https://github.com/join">Go to github.com</a>to sign up for an account</p>
+                    <p>The best way to build and ship software. <a href="https://github.com/join">Go to github.com</a> to sign up for an account</p>
                 </div>
                 <div className="btns">
                     <p>

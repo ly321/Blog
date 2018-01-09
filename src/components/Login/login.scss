@@ -1,5 +1,5 @@
 .login{
-    width: 70%;
+    width: 85%;
     height: inherit;
     float: right;
     border-left: 1px solid #ccc;
@@ -20,6 +20,7 @@
         }
         .inputs{
             margin-top: 20px;
+        
             >p:first-child{
                 margin-bottom: 10px;
                 span:first-child{
@@ -33,9 +34,13 @@
                 width: 60%;
                 margin: 5px 5px;
                 padding: 3px 2px;
+                -webkit-app-region: no-drag;
             }
             p{
                 font-size: 12px;
+                a{
+                    -webkit-app-region: no-drag;
+                }
             }
         }
     }
