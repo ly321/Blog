@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Home from "./components/Home/Home";
+import Home from "./View/Home/Home";
 
 import "./assets/scss/reset.scss"
 import "./assets/scss/util.scss"
