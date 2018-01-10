@@ -1,4 +1,4 @@
-const {app,Menu, BrowserWindow} = require('electron')
+const {app,Menu, BrowserWindow} =require('electron')
 const path = require('path')
 const url = require('url')
 const pkg = require('./package.json') // 引用package.json

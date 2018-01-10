@@ -1,6 +1,11 @@
 import * as React from 'react';
 import "./login.scss";
-export default class Login extends React.Component{
+import {shell} from 'electron';
+ class Login extends React.Component{
+    goGithub(e:any){
+        e.preventDefault();
+        shell.openExternal('https://github.com/join');
+    }
     render(){
         return(
             <div className="login">
@@ -14,9 +19,9 @@ export default class Login extends React.Component{
                         <span>GitHub</span>
                         <span>GitHub Enterprise</span>    
                     </p>
-                    <input type="text" placeholder="Username or email"/>
-                    <input type="text" placeholder="Password"/>
-                    <p>The best way to build and ship software. <a href="https://github.com/join">Go to github.com</a> to sign up for an account</p>
+                    <input className="click" type="text" placeholder="Username or email"/>
+                    <input className="click" type="text" placeholder="Password"/>
+                    <p>The best way to build and ship software. <a className="click" href="#" onClick={this.goGithub}>Go to github.com</a> to sign up for an account</p>
                 </div>
                 <div className="btns">
                     <p>
@@ -33,3 +38,4 @@ export default class Login extends React.Component{
         )
     }  
 }
+export default Login;
