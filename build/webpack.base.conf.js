@@ -1,5 +1,6 @@
 const path=require('path');
 module.exports = {
+    target:"electron",
     entry: "./src/index.tsx",
     output: {
       filename: "bundle.js",
