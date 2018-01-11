@@ -1,14 +1,15 @@
 import * as React from 'react';
 import "./login.scss";
 import {shell} from 'electron';
+import {Link} from 'react-router-dom';
 import 'whatwg-fetch';
-class Login extends React.Component{
+class Login extends React.Component<any,any>{
     goGithub(e:any){
         e.preventDefault();
         shell.openExternal('https://github.com/join');
     }
     login(){
-        window.location.href="https://github.com/login/oauth/authorize?client_id=0cacf631e36a12692407";
+        window.location.href='https://github.com/login/oauth/authorize?client_id=0cacf631e36a12692407'; 
     }
     render(){
         return(
@@ -28,14 +29,14 @@ class Login extends React.Component{
                     <p>The best way to build and ship software. <a className="click" href="#" onClick={this.goGithub}>Go to github.com</a> to sign up for an account</p>
                 </div>
                 <div className="btns">
-                    <p className="click" onClick={this.login}>
+                    <a className="click" href="#" onClick={this.login}>
                         <img src="./src/assets/img/complete-r-o.png" alt=""/>
                         <span>Log in</span>
-                    </p>
-                    <p className="click"> 
+                    </a>
+                    <Link className="click" to={{pathname:'/callback'}}> 
                         <img src="./src/assets/img/error-r-o.png" alt=""/>
                         <span>Cancel</span>
-                    </p>
+                    </Link>
                 </div> 
                 </div>
             </div>

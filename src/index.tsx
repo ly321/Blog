@@ -1,11 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Home from "./View/Home/Home";
+import Index from "./View/Index";
 
 import "./assets/scss/reset.scss"
 import "./assets/scss/util.scss"
 
 ReactDOM.render(
-  <Home/>,
+  <Index/>,
   document.getElementById('root') as HTMLElement
 );
