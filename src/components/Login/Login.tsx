@@ -1,7 +1,9 @@
 import * as React from 'react';
 import "./login.scss";
-import {shell} from 'electron';
+import {shell,BrowserWindow} from 'electron';
 import {Link} from 'react-router-dom';
+// import win from '../../../main.js';
+// const win=require('../../../main.js');
 import 'whatwg-fetch';
 class Login extends React.Component<any,any>{
     goGithub(e:any){

@@ -10,7 +10,6 @@ class Index extends React.Component<any,any>{
             <Router history = {history}>
                     <Switch>
                         <Route path = '/' exact component = {Home}    />
-                    
                     </Switch>
             </Router>
         )
