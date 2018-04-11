@@ -1,0 +1,39 @@
+.hello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 100px;
+        a {
+            width: 200px;
+            height: 200px;
+            -webkit-app-region: no-drag;
+            img {
+                width: 200px;
+                height: 200px;
+                line-height: 0;
+                display: inline-block;
+                border-radius: 50%;
+                transition: linear 0.25s;
+            }
+        }
+        p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .username {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #999;
+        }
+    }
+    .bottom{
+        position: fixed;
+        bottom: 150px;
+        font-size: 24px;
+    }
+}
