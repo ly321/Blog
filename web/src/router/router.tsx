@@ -10,8 +10,8 @@ export default class RouterConfig extends React.Component<any, any>{
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" component={ Login }/>
-                    <Route path="/home" component={ Home }/>
+                    <Route exact path="/" component={ Home }/>
+                    <Route path="/login" component={ Login }/>
                 </Switch>
             </Router>
         )

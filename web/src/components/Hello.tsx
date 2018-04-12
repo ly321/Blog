@@ -1,7 +1,7 @@
 import * as React from 'react';
+import {withRouter} from "react-router-dom";
 
 import axios from 'axios';
-
 import '../assets/scss/hello.scss';
 
 class Hello extends React.Component < any,
@@ -13,19 +13,19 @@ any > {
             avatar: "./src/assets/img/avatar.svg"
         }
     }
-    componentDidMount() {
+    async componentDidMount() {
         var query = window.location.search;
-        if (query) {
-            var arr = query.split('&'),
-                code = arr[0].replace('?code=', "");
-            axios(`http://localhost:8080/github/oauth/callback?code=${code}`).then((res : any) => {
-                console.log(res);
-                this.setState({avatar: res.data.avatar_url, username: res.data.name})
-
-            }).catch((err : any) => {
-                console.log(err);
-            })
-        }
+        var arr = query.split('&'),
+        code = arr[0].replace('?code=', '');
+        var res = await axios(`http://localhost:8080/github/oauth/callback?code=${code}`);
+        this.setState({avatar: res.data.avatar_url, username: res.data.name})
+        window
+            .localStorage
+            .setItem('avatar', res.data.avatar_url)
+        window
+            .localStorage
+            .setItem('username', res.data.name)
+            this.props.history.push('/');
     }
     render() {
         return (
@@ -43,4 +43,4 @@ any > {
     }
 }
 
-export default Hello;
+export default withRouter(Hello);
