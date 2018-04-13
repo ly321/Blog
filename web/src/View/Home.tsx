@@ -4,7 +4,8 @@ import {withRouter} from "react-router-dom";
 import Menu from '../components/Menu';
 
 import axios from 'axios';
-
+import * as utf8 from 'utf8';
+import * as base64 from 'base-64';
 class Home extends React.Component < any,
 any > {
     constructor(props : any) {
@@ -29,24 +30,23 @@ any > {
                 username = window
                     .localStorage
                     .getItem('username');
-            if (avatar && username && avatar !== undefined && username != undefined) {
+            if (!avatar && !username || avatar === undefined && username === undefined) {
+                window.location.href = "http://localhost:8080/github/login"
+            } else {
                 try {
-                    var response = await
-                        axios('https://api.github.com/users/sillyY/repos'),
-                        repo = response
-                            .data
-                            .filter((data : any) => {
-                                var name=`${username.toLowerCase()}.github.io`;
-                                return data.name === name;
-                            }),
-                        blog= repo[0];
-                        console.log(blog);
+                    var username =window.localStorage.getItem('username'),
+                        url=`https://api.github.com/repos/${username}/${username.toLocaleLowerCase()}.github.io/contents/index.html`,
+                        response= await axios(url);
+                        var data =utf8.decode(base64.decode(response.data.content));
+                        console.log(response);
                         
+                        
+                    this.setState({
+                        html:data
+                    })
                     } catch (error) {
                         console.log(error);
                     }
-                } else {
-                    window.location.href = "http://localhost:8080/github/login"
                 }
             }
 
@@ -55,7 +55,8 @@ any > {
             return (
                 <div className="home">
                     <Menu/>
-                    1111
+                    <iframe srcDoc={this.state.html}></iframe>
+                    
                 </div>
             )
         }
